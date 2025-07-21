@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Network Vulnerability Report Generator
+# This script creates a static report outline for network security scanning
+
