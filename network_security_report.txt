@@ -2,14 +2,14 @@
      NETWORK SECURITY SCAN REPORT
 ==========================================
 
-Generated on: Wed Jul 30 05:02:13 UTC 2025
-Scan performed by: Network Security Scanner v1.0
+Generated on: Thu Aug 14 21:48:53 UTC 2025
+Scan performed by: Network Security Scanner v2.0 (NVD Enhanced)
 
 ==========================================
 TARGET INFORMATION
 ==========================================
 Target IP Address/Hostname: scanme.nmap.org
-Scan Type: Comprehensive Vulnerability Assessment
+Scan Type: Comprehensive Vulnerability Assessment with NVD Integration
 Scan Duration: (Will be created by actual scan)
 
 ==========================================
@@ -18,20 +18,36 @@ OPEN PORTS AND DETECTED SERVICES
 
 The following ports were found to be open:
 
+22/tcp    open     ssh        OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13 (Ubuntu Linux; protocol 2.0)
+80/tcp    open     http       Apache httpd 2.4.7 ((Ubuntu))
+9929/tcp  open     nping-echo Nping echo
+31337/tcp open     tcpwrapped
 
 ==========================================
 POTENTIAL VULNERABILITIES IDENTIFIED
 ==========================================
 
-Performing comprehensive vulnerability scan...
+Performing comprehensive vulnerability scan... Complete!
+
 --- NSE Vulnerability Scan Results ---
 
-No direct VULNERABLE flags found in NSE scan results.
+NSE Script Detected Vulnerabilities:
+|   VULNERABLE:
+|     State: LIKELY VULNERABLE
 
---- Analyzing Service Versions ---
+--- Analyzing Service Versions with NVD Integration ---
 
+[!!] VULNERABILITY DETECTED: OpenSSH 6.6 is running, checking NVD for known vulnerabilities.
+  [Note] Additional services found but limiting NVD queries to avoid rate limiting during testing.
+[!!] VULNERABILITY DETECTED: Apache 2.4.7 is running, checking NVD for known vulnerabilities.
+  [Note] Additional services found but limiting NVD queries to avoid rate limiting during testing.
+NVD database queries... Complete!
 
 --- Additional Vulnerability Checks ---
+
+CVE References found in scan:
+|     IDs:  CVE:CVE-2007-6750
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750
 
 Vulnerability scan completed. Review results above for security issues.
 
@@ -40,22 +56,25 @@ RECOMMENDATIONS FOR REMEDIATION
 ==========================================
 
 Immediate Actions Required (High Priority):
-  1. Update Apache web server to the latest stable version
-  2. Change default database credentials immediately
-  3. Implement strong password policies for all services
-  4. Address any NSE-detected vulnerabilities immediately
+  1. Address all CVEs identified by NVD API queries immediately
+  2. Update Apache web server to the latest stable version
+  3. Change default database credentials immediately
+  4. Implement strong password policies for all services
+  5. Address any NSE-detected vulnerabilities immediately
 
 Short-term Improvements (Medium Priority):
-  5. Configure SSH to use only strong encryption ciphers
-  6. Disable server version disclosure in HTTP headers
-  7. Implement proper firewall rules to restrict access
-  8. Update all services to their latest secure versions
+  6. Configure SSH to use only strong encryption ciphers
+  7. Disable server version disclosure in HTTP headers
+  8. Implement proper firewall rules to restrict access
+  9. Update all services to their latest secure versions
+  10. Monitor NVD regularly for new vulnerabilities affecting your services
 
 Long-term Security Enhancements:
-  9. Establish regular vulnerability scanning schedule
-  10. Implement intrusion detection system (IDS)
-  11. Set up log monitoring and alerting
-  12. Conduct regular security awareness training
+  11. Establish regular vulnerability scanning schedule with NVD integration
+  12. Implement intrusion detection system (IDS)
+  13. Set up log monitoring and alerting
+  14. Conduct regular security awareness training
+  15. Implement automated vulnerability management system
 
 ==========================================
 SCAN SUMMARY
@@ -63,15 +82,17 @@ SCAN SUMMARY
 
 Ports Scanned: [Populated by nmap scan results]
 Services Identified: [Based on live scan results]
-Vulnerabilities Found: [Based on NSE and version analysis]
-Overall Risk Level: [Determined by vulnerability severity]
+Vulnerabilities Found: [Based on NSE, version analysis, and NVD API]
+NVD Integration: Active (Limited queries during testing)
+Overall Risk Level: [Determined by vulnerability severity and CVE data]
 
-Next Recommended Action: Address high-risk vulnerabilities immediately
+Next Recommended Action: Address high-risk CVEs and vulnerabilities immediately
 
 ==========================================
 END OF REPORT
 ==========================================
 
-Report generated on: Wed Jul 30 05:02:13 UTC 2025
+Report generated on: Thu Aug 14 22:03:45 UTC 2025
+NVD API Integration: Enabled
 For questions about this report, contact: security@company.com
 
